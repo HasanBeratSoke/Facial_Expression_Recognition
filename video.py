@@ -1,11 +1,12 @@
 import cv2
 from model import FacialExpressionModel
 from tensorflow.keras.models import load_model
+from tensorflow import keras
 import numpy as np
 
 facec = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-# model = FacialExpressionModel("model.json", "model_weights.h5")
-model = load_model('model_weights')
+model = FacialExpressionModel("model.json", "model_weights.h5")
+#model = keras.models.load_model('model_weights.h5')
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 class VideoCamera(object):
@@ -15,7 +16,7 @@ class VideoCamera(object):
     def __del__(self):
         self.video.release()
 
-    # returns camera frames along with bounding boxes and predictions
+    
     def get_frame(self):
         _, fr = self.video.read()
         gray_fr = cv2.cvtColor(fr, cv2.COLOR_BGR2GRAY)
