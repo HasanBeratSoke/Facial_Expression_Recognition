@@ -1,11 +1,12 @@
 from tensorflow.keras.models import model_from_json
+from tensorflow.keras.models import load_model
 import numpy as np
 
 class FacialExpressionModel(object):
     emo_list =  ["Angry","Disgust","Fear","Happy","Neutral","Sad","Surprise"]
     
     def __init__ (self, model_json_file, model_weights_file):
-        with open (model_weights_file,"r",encoding="cp437", errors='ignore') as json_file:
+        with open (model_weights_file,"r",errors='ignore') as json_file:
             loaded_model_json=json_file.read()
             self.loaded_model = model_from_json(loaded_model_json)
         
