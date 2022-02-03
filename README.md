@@ -1,5 +1,5 @@
 # Yüz ifadesi tanıma projesi
-### Araçlar
+## Araçlar
 ```
 Keras
 Flask
@@ -18,7 +18,7 @@ Opencv
 
 ---
 
-### Verilerilerin dagilimi 
+## Verilerilerin dagilimi 
 ```python
 pic_size = 48
 
@@ -37,10 +37,10 @@ for expression in os.listdir(base_path + "train/"):
 plt.tight_layout()
 plt.show()
 ```
-![Train Resimleri]()
+![Train resimleri]()
 
 ---
-#### veri setinin kategorilerine göre dagılımı
+## veri setinin kategorilerine göre dagılımı
 
 ```Python
 for expression in os.listdir(base_path + 'train'):
@@ -60,7 +60,7 @@ Cıktı:
 
 ---
 
-#### Veri üreteçi kullanmak
+## Veri üreteçi kullanmak
 
 `from tensorflow.keras.preprocessing.image import ImageDataGenerator`
 
@@ -74,19 +74,24 @@ Cıktı:
 
 ---
 
-#### Evrisimli sinir aglarini kurma asamasi
+## Evrisimli sinir aglarini kurma asamasi
 Kisaca bahsetmek gerekirse, 
 goruntu islemede kullanilan, icerisinde bircok cesitli katman bulunan sinir agidir.
 
 **Convolution Layer** : ozellikleri saptamak icin kullanilir.
 
+
 **Non-Linearity Layer** : sisteme dogrusal olmayanligin yani non-linearity tanitilmasi.
+
 
 **Flattening Layer** : modelin egitilmesi icin verileri hazirlar duzlestirir. 
 
+
 **Pooling Layer** : agirlik sayisini azaltir ve uygunlugunu kontrol eder.
 
+
 prejemizdeki kullandigimiz agin mimarisi:
+
 ```
 from tensorflow.keras.layers import Dense, Input, Dropout, GlobalAveragePooling2D, Flatten, Conv2D, BatchNormalization, Activation, MaxPooling2D
 from tensorflow.keras.models import Model, Sequential
@@ -144,3 +149,46 @@ model.add(Dense(nb_classes, activation='softmax'))
 opt = Adam(lr=0.0001)
 model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
 ```
+- activasyon fonksiyoun olarak Tanh veya sigmoid fonksiyonu kullanabilirdik ama ReLu cogu durumda daha iyi performans verdigi icin ReLu kullandim.
+
+- `Batch normalization` : Agin icinde islemler sonucunda verileri dagilimini degistiyor.
+
+
+- `Dropout` : bazi dugumlerin agirliklarini kisitlayarak overfitting azatmaya yardimci olur.
+
+---
+
+## modelin egitimi
+```epochs = 50
+
+from tensorflow.keras.callbacks import ModelCheckpoint
+#filepath = ('')
+
+checkpoint = ModelCheckpoint("model_weights.h5", monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+callbacks_list = [checkpoint]```
+
+```
+history = model.fit_generator(generator=train_generator,
+ steps_per_epoch=train_generator.n//train_generator.batch_size,
+ epochs=epochs,
+ validation_data = test_generator,
+ validation_steps = test_generator.n//test_generator.batch_size,  callbacks=callbacks_list
+ )```
+
+cikti:
+```WARNING:tensorflow:From <ipython-input-24-5e7a18b22159>:1: Model.fit_generator (from tensorflow.python.keras.engine.training) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use Model.fit, which supports generators.
+Epoch 1/50
+224/224 [==============================] - ETA: 0s - loss: 2.0477 - accuracy: 0.2298WARNING:tensorflow:Can save best model only with val_acc available, skipping.
+224/224 [==============================] - 608s 3s/step - loss: 2.0477 - accuracy: 0.2298 - val_loss: 1.7448 - val_accuracy: 0.3096
+Epoch 2/50
+224/224 [==============================] - ETA: 0s - loss: 1.8305 - accuracy: 0.2950WARNING:tensorflow:Can save best model only with val_acc available, skipping.```
+
+
+**modelin egitimi yaklasik 9 saat surmustur**
+
+#### modelin sonuclari
+![his]
+* 20. epoch dan sonra train ve validation arasindaki fark iyice acilmistir yani overfittig bi gostergesidir, buna cozum olarak belki earlystop uygulanabilirdi. 
+* grafik cizgisinin bazi yerlerinde koseli olmasinin sebebi dropuot uygulanmasindan dolayidir.
