@@ -84,7 +84,7 @@ goruntu islemede kullanilan, icerisinde bircok cesitli katman bulunan sinir agid
 **Pooling Layer** : agirlik sayisini azaltir ve uygunlugunu kontrol eder.
 
 prejemizdeki kullandigimiz agin mimarisi:
-`
+```
 from tensorflow.keras.layers import Dense, Input, Dropout, GlobalAveragePooling2D, Flatten, Conv2D, BatchNormalization, Activation, MaxPooling2D
 from tensorflow.keras.models import Model, Sequential
 from tensorflow.keras.optimizers import Adam
@@ -140,4 +140,4 @@ model.add(Dense(nb_classes, activation='softmax'))
 
 opt = Adam(lr=0.0001)
 model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy'])
-`
+```
