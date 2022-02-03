@@ -5,10 +5,18 @@ Keras
 Flask
 Opencv
 ```
-img[alt=drawing] { width: 200px; }
-![keras](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/keras.png)
-![flask](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/flask.png)
-![opencv](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/opencv.png)
+
+<div> <img align="center" width="100" height="100" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/keras.png"> </div>
+
+
+
+<img align="center" width="100" height="100" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/keras.png">
+
+<img align="center" width="100" height="100" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/opencv.png">
+
+
+
+
 ---  
 
  > Kullandığım veri setini [buradan](https://www.kaggle.com/msambare/fer2013) ulaşabilirsiniz.
