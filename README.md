@@ -5,6 +5,7 @@ Keras
 Flask
 Opencv
 ```
+img[alt=drawing] { width: 200px; }
 ![keras](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/keras.png)
 ![flask](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/flask.png)
 ![opencv](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/opencv.png)
@@ -12,7 +13,8 @@ Opencv
 
  > Kullandığım veri setini [buradan](https://www.kaggle.com/msambare/fer2013) ulaşabilirsiniz.
 
-* Veri seti 48x48 piksel büyüklüğünde gri resimler içermektedir. Ayrıca 7 ayrı kategoriye sahiptir. `(0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral)`
+* Veri seti 48x48 piksel büyüklüğünde gri resimler içermektedir. Ayrıca 7 ayrı kategoriye sahiptir. 
+* `(0=Angry, 1=Disgust, 2=Fear, 3=Happy, 4=Sad, 5=Surprise, 6=Neutral)`
 
 * Veri seti yaklaşık 36bin resim içermektedir.
 
@@ -202,9 +204,22 @@ Epoch 2/50
 
 **modelin egitimi yaklasik 9 saat surmustur**
 
-#### modelin sonuclari
+---
+
+### Modelin sonuclari
 
 ![his](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/his.png)
 
-* 20. epoch dan sonra train ve validation arasindaki fark iyice acilmistir yani overfittig bi gostergesidir, buna cozum olarak belki earlystop uygulanabilirdi. 
+* 20 epoch dan sonra train ve validation arasindaki fark iyice acilmistir yani overfittig bi gostergesidir, buna cozum olarak belki earlystop uygulanabilirdi. 
 * grafik cizgisinin bazi yerlerinde koseli olmasinin sebebi dropuot uygulanmasindan dolayidir.
+
+#### yararlandigim rehberler
+- https://towardsdatascience.com/from-raw-images-to-real-time-predictions-with-deep-learning-ddbbda1be0e4
+- https://www.tensorflow.org/tutorials/keras/save_and_load#save_checkpoints_during_training
+- https://medium.com/@tuncerergin/convolutional-neural-network-convnet-yada-cnn-nedir-nasil-calisir-97a0f5d34cad
+- http://derindelimavi.blogspot.com/2018/01/bir-derin-ogrenme-deneyi-dropout-ve.html
+- https://github.com/log0/video_streaming_with_flask_example
+- https://www.tensorflow.org/api_docs/python/tf/keras/models/model_from_json
+
+
+*iyi calismalar :)*
