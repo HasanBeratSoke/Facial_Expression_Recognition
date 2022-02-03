@@ -224,6 +224,15 @@ Epoch 2/50
 * 20 epoch dan sonra train ve validation arasindaki fark iyice acilmistir yani overfittig bi gostergesidir, buna cozum olarak belki earlystop uygulanabilirdi. 
 * grafik cizgisinin bazi yerlerinde koseli olmasinin sebebi dropuot uygulanmasindan dolayidir.
 
+## testler
+
+![test1](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/test1.png)
+
+
+![test2](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/test2.png)
+
+
+
 #### yararlandigim rehberler
 - https://towardsdatascience.com/from-raw-images-to-real-time-predictions-with-deep-learning-ddbbda1be0e4
 - https://www.tensorflow.org/tutorials/keras/save_and_load#save_checkpoints_during_training
@@ -234,3 +243,4 @@ Epoch 2/50
 
 
 *iyi calismalar :)*
+
