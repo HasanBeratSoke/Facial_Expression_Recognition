@@ -188,6 +188,6 @@ Epoch 2/50
 **modelin egitimi yaklasik 9 saat surmustur**
 
 #### modelin sonuclari
-![his]
+![his](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/his.png)
 * 20. epoch dan sonra train ve validation arasindaki fark iyice acilmistir yani overfittig bi gostergesidir, buna cozum olarak belki earlystop uygulanabilirdi. 
 * grafik cizgisinin bazi yerlerinde koseli olmasinin sebebi dropuot uygulanmasindan dolayidir.
