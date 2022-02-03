@@ -236,6 +236,7 @@ Epoch 2/50
 #### yararlandigim rehberler
 - https://towardsdatascience.com/from-raw-images-to-real-time-predictions-with-deep-learning-ddbbda1be0e4
 - https://www.tensorflow.org/tutorials/keras/save_and_load#save_checkpoints_during_training
+- https://ichi.pro/tr/keras-imagedatagenerator-in-akis-yontemleri-ve-bunlarin-ne-zaman-kullanilacagi-203621254419857
 - https://medium.com/@tuncerergin/convolutional-neural-network-convnet-yada-cnn-nedir-nasil-calisir-97a0f5d34cad
 - http://derindelimavi.blogspot.com/2018/01/bir-derin-ogrenme-deneyi-dropout-ve.html
 - https://github.com/log0/video_streaming_with_flask_example
