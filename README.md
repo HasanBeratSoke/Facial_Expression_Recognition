@@ -5,7 +5,7 @@ Keras
 Flask
 Opencv
 ```
-
+<!-- 
 [comment]: <>  <p float="center">
 [comment]: <>  <div> <img align="" width="150" height="150" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/keras.png"> </div>
 
@@ -14,7 +14,7 @@ Opencv
 [comment]: <> <img align="" width="150" height="150" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/opencv.png">
 [comment]: <> </p>
 
-
+-->
 
 
 
