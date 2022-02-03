@@ -5,7 +5,9 @@ Keras
 Flask
 Opencv
 ```
-
+![keras](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/keras.png)
+![flask](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/flask.png)
+![opencv](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/opencv.png)
 ---  
 
  > Kullandığım veri setini [buradan](https://www.kaggle.com/msambare/fer2013) ulaşabilirsiniz.
@@ -37,7 +39,7 @@ for expression in os.listdir(base_path + "train/"):
 plt.tight_layout()
 plt.show()
 ```
-![Train resimleri]()
+![Train resimleri](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/Train%20resimleri.png)
 
 ---
 ## veri setinin kategorilerine göre dagılımı
@@ -77,9 +79,14 @@ Cıktı:
 ## Evrisimli sinir aglarini kurma asamasi
 Kisaca bahsetmek gerekirse, 
 goruntu islemede kullanilan, icerisinde bircok cesitli katman bulunan sinir agidir.
+![cnn layer](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/cnn%20layer.png)
+
+![layer](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/layers.png)
+
 
 **Convolution Layer** : ozellikleri saptamak icin kullanilir.
 
+![gif2](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/gif2.gif)
 
 **Non-Linearity Layer** : sisteme dogrusal olmayanligin yani non-linearity tanitilmasi.
 
@@ -89,6 +96,7 @@ goruntu islemede kullanilan, icerisinde bircok cesitli katman bulunan sinir agid
 
 **Pooling Layer** : agirlik sayisini azaltir ve uygunlugunu kontrol eder.
 
+![gif1](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/gif1.gif)
 
 prejemizdeki kullandigimiz agin mimarisi:
 
@@ -155,26 +163,32 @@ model.compile(optimizer=opt, loss='categorical_crossentropy', metrics=['accuracy
 
 
 - `Dropout` : bazi dugumlerin agirliklarini kisitlayarak overfitting azatmaya yardimci olur.
+![Dropout](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/Droput.jpg)
 
 ---
 
 ## modelin egitimi
-```epochs = 50
+```
+epochs = 50
 
 from tensorflow.keras.callbacks import ModelCheckpoint
 #filepath = ('')
 
 checkpoint = ModelCheckpoint("model_weights.h5", monitor='val_acc', verbose=1, save_best_only=True, mode='max')
-callbacks_list = [checkpoint]```
+callbacks_list = [checkpoint]
+```
 
-```history = model.fit_generator(generator=train_generator,
+```
+history = model.fit_generator(generator=train_generator,
  steps_per_epoch=train_generator.n//train_generator.batch_size,
  epochs=epochs,
  validation_data = test_generator,
  validation_steps = test_generator.n//test_generator.batch_size,  callbacks=callbacks_list
- )```
+ )
+ ```
 
 cikti:
+
 ```WARNING:tensorflow:From <ipython-input-24-5e7a18b22159>:1: Model.fit_generator (from tensorflow.python.keras.engine.training) is deprecated and will be removed in a future version.
 Instructions for updating:
 Please use Model.fit, which supports generators.
@@ -182,12 +196,15 @@ Epoch 1/50
 224/224 [==============================] - ETA: 0s - loss: 2.0477 - accuracy: 0.2298WARNING:tensorflow:Can save best model only with val_acc available, skipping.
 224/224 [==============================] - 608s 3s/step - loss: 2.0477 - accuracy: 0.2298 - val_loss: 1.7448 - val_accuracy: 0.3096
 Epoch 2/50
-224/224 [==============================] - ETA: 0s - loss: 1.8305 - accuracy: 0.2950WARNING:tensorflow:Can save best model only with val_acc available, skipping.```
+224/224 [==============================] - ETA: 0s - loss: 1.8305 - accuracy: 0.2950WARNING:tensorflow:Can save best model only with val_acc available, skipping.
+```
 
 
 **modelin egitimi yaklasik 9 saat surmustur**
 
 #### modelin sonuclari
+
 ![his](https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/his.png)
+
 * 20. epoch dan sonra train ve validation arasindaki fark iyice acilmistir yani overfittig bi gostergesidir, buna cozum olarak belki earlystop uygulanabilirdi. 
 * grafik cizgisinin bazi yerlerinde koseli olmasinin sebebi dropuot uygulanmasindan dolayidir.
