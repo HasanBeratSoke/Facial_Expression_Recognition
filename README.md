@@ -6,12 +6,12 @@ Flask
 Opencv
 ```
 
-<p float="left">
- <div> <img align="center" width="100" height="100" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/keras.png"> </div>
+<p float="center">
+ <div> <img align="" width="150" height="150" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/keras.png"> </div>
 
-<img align="center" width="100" height="100" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/flask.png">
+<img align="" width="150" height="150" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/flask.png">
 
-<img align="center" width="100" height="100" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/opencv.png">
+<img align="" width="150" height="150" src="https://github.com/HasanBeratSoke/Facial_Expression_Recognition/blob/main/git-foto/opencv.png">
 </p>
 
 
