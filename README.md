@@ -167,8 +167,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 checkpoint = ModelCheckpoint("model_weights.h5", monitor='val_acc', verbose=1, save_best_only=True, mode='max')
 callbacks_list = [checkpoint]```
 
-```
-history = model.fit_generator(generator=train_generator,
+```history = model.fit_generator(generator=train_generator,
  steps_per_epoch=train_generator.n//train_generator.batch_size,
  epochs=epochs,
  validation_data = test_generator,
