@@ -79,8 +79,11 @@ Kisaca bahsetmek gerekirse,
 goruntu islemede kullanilan, icerisinde bircok cesitli katman bulunan sinir agidir.
 
 **Convolution Layer** : ozellikleri saptamak icin kullanilir.
+
 **Non-Linearity Layer** : sisteme dogrusal olmayanligin yani non-linearity tanitilmasi.
+
 **Flattening Layer** : modelin egitilmesi icin verileri hazirlar duzlestirir. 
+
 **Pooling Layer** : agirlik sayisini azaltir ve uygunlugunu kontrol eder.
 
 prejemizdeki kullandigimiz agin mimarisi:
